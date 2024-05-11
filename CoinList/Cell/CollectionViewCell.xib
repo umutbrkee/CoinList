@@ -14,10 +14,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lhr-zC-jli" userLabel="mainView">
-                    <rect key="frame" x="5" y="12.666666666666664" width="365" height="52.999999999999993"/>
+                    <rect key="frame" x="5" y="12.666666666666668" width="365" height="52.666666666666643"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SWe-uk-nvx">
-                            <rect key="frame" x="255" y="6" width="110" height="40"/>
+                            <rect key="frame" x="255" y="6.0000000000000036" width="110" height="40.666666666666671"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="E4E-se-oik">
                                     <rect key="frame" x="0.0" y="0.0" width="99" height="12.666666666666666"/>
@@ -37,7 +37,7 @@
                                     </subviews>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="jrb-iM-ttz">
-                                    <rect key="frame" x="0.0" y="14" width="105.33333333333333" height="11.333333333333332"/>
+                                    <rect key="frame" x="0.0" y="14.666666666666668" width="105.33333333333333" height="11.333333333333332"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+35.75%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oXA-ap-KM0">
                                             <rect key="frame" x="0.0" y="0.0" width="43" height="11.333333333333334"/>
@@ -54,7 +54,7 @@
                                     </subviews>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="ENp-5Q-R5d">
-                                    <rect key="frame" x="0.0" y="28" width="85" height="12.666666666666671"/>
+                                    <rect key="frame" x="0.0" y="27.999999999999996" width="85" height="12.666666666666668"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- 3.7%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHF-ou-ReS">
                                             <rect key="frame" x="0.0" y="0.0" width="32" height="12.666666666666666"/>
@@ -85,14 +85,14 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7hj-kN-TFC">
-                            <rect key="frame" x="204.33333333333334" y="0.0" width="50.666666666666657" height="53"/>
+                            <rect key="frame" x="203.66666666666666" y="0.0" width="51.333333333333343" height="52.666666666666664"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UMu-RL-M94">
-                            <rect key="frame" x="140" y="6" width="64.333333333333314" height="40"/>
+                            <rect key="frame" x="140" y="6.0000000000000036" width="63.666666666666657" height="40.666666666666671"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 BTC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="2iY-S2-H8B">
-                                    <rect key="frame" x="0.0" y="22.333333333333336" width="64.333333333333329" height="19.333333333333336"/>
+                                    <rect key="frame" x="0.0" y="23" width="63.666666666666664" height="19.333333333333329"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="19.333333333333336" id="6Tp-lv-i9M"/>
                                     </constraints>
@@ -101,7 +101,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 10 000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="aCW-xR-4Hn">
-                                    <rect key="frame" x="0.0" y="0.0" width="51" height="15"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="50.333333333333336" height="15.666666666666666"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
@@ -118,7 +118,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G8t-H8-7MA">
-                            <rect key="frame" x="57" y="6" width="75" height="43"/>
+                            <rect key="frame" x="57" y="6.0000000000000036" width="75" height="42.666666666666671"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="aef-xq-MEY">
                                     <rect key="frame" x="0.0" y="0.0" width="39" height="38.666666666666664"/>
@@ -145,7 +145,7 @@
                                 <constraint firstAttribute="bottom" secondItem="aef-xq-MEY" secondAttribute="bottom" constant="4" id="zpg-UT-b8s"/>
                             </constraints>
                         </view>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="afZ-ns-QQV">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="afZ-ns-QQV">
                             <rect key="frame" x="0.0" y="3" width="49" height="46"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="49" id="qQk-AJ-RlI"/>
@@ -184,6 +184,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="btcPriceLabel" destination="2iY-S2-H8B" id="Lgd-6A-aCW"/>
+                <outlet property="image" destination="afZ-ns-QQV" id="lKc-Vg-2s0"/>
                 <outlet property="nameLabel" destination="fAQ-Wq-KJm" id="fdc-i3-VxU"/>
                 <outlet property="percentageLabel" destination="FZU-6E-feR" id="403-cM-114"/>
                 <outlet property="priceLabel" destination="aCW-xR-4Hn" id="10b-mz-msb"/>
@@ -192,7 +193,4 @@
             <point key="canvasLocation" x="40.458015267175568" y="-226.05633802816902"/>
         </view>
     </objects>
-    <resources>
-        <image name="check" width="229" height="229"/>
-    </resources>
 </document>
