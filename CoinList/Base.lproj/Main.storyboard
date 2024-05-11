@@ -180,7 +180,7 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="60"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Bitcoin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wUe-pO-h9z">
-                                        <rect key="frame" x="55" y="10" width="283" height="29"/>
+                                        <rect key="frame" x="159" y="10" width="75.333333333333314" height="29"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -193,20 +193,10 @@
                                     <constraint firstItem="wUe-pO-h9z" firstAttribute="top" secondItem="XE6-js-Uun" secondAttribute="top" constant="10" id="ggz-hw-HBA"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xy3-8U-c59">
-                                <rect key="frame" x="5" y="68.666666666666671" width="40" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="1Y6-V4-Pqt"/>
-                                    <constraint firstAttribute="width" constant="40" id="9Jd-12-Dvb"/>
-                                </constraints>
-                                <state key="normal" image="back">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y6g-bb-KaB" customClass="ChartView" customModule="CoinList" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y6g-bb-KaB">
                                 <rect key="frame" x="0.0" y="143.66666666666663" width="393" height="250"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Crs-IP-SKg">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Crs-IP-SKg">
                                         <rect key="frame" x="129.66666666666666" y="111" width="133.99999999999997" height="28.333333333333343"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No data avaiable" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="er7-Uc-4XF">
@@ -224,18 +214,13 @@
                                             <constraint firstAttribute="trailing" secondItem="er7-Uc-4XF" secondAttribute="trailing" constant="20" id="yaU-St-wbH"/>
                                         </constraints>
                                     </view>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="M6D-1m-y4O">
-                                        <rect key="frame" x="186.66666666666666" y="115.00000000000003" width="20" height="20"/>
-                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="DvB-AS-TOa">
                                         <variation key="heightClass=regular-widthClass=regular" constant="500"/>
                                     </constraint>
-                                    <constraint firstItem="M6D-1m-y4O" firstAttribute="centerX" secondItem="y6g-bb-KaB" secondAttribute="centerX" id="Vb4-Au-LjX"/>
                                     <constraint firstItem="Crs-IP-SKg" firstAttribute="centerX" secondItem="y6g-bb-KaB" secondAttribute="centerX" id="gQg-pj-wy0"/>
-                                    <constraint firstItem="M6D-1m-y4O" firstAttribute="centerY" secondItem="y6g-bb-KaB" secondAttribute="centerY" id="kIY-k3-xkS"/>
                                     <constraint firstItem="Crs-IP-SKg" firstAttribute="centerY" secondItem="y6g-bb-KaB" secondAttribute="centerY" id="tda-2D-saN"/>
                                 </constraints>
                             </view>
@@ -352,7 +337,6 @@
                                 <variation key="heightClass=regular-widthClass=regular" constant="200"/>
                             </constraint>
                             <constraint firstItem="y6g-bb-KaB" firstAttribute="top" secondItem="X1r-w1-fQC" secondAttribute="bottom" constant="10" id="62P-Xp-Xu0"/>
-                            <constraint firstItem="wUe-pO-h9z" firstAttribute="leading" secondItem="xy3-8U-c59" secondAttribute="trailing" constant="10" id="B78-28-KRJ"/>
                             <constraint firstItem="y6g-bb-KaB" firstAttribute="leading" secondItem="Nzb-Hh-YZz" secondAttribute="leading" id="EDS-8a-BY5"/>
                             <constraint firstItem="Nzb-Hh-YZz" firstAttribute="trailing" secondItem="59a-NE-te1" secondAttribute="trailing" id="FWx-9i-Wcy"/>
                             <constraint firstItem="Okw-fO-8ZP" firstAttribute="top" secondItem="kjH-nb-TWJ" secondAttribute="bottom" constant="10" id="M55-IL-Zmt">
@@ -361,9 +345,7 @@
                             <constraint firstItem="Nzb-Hh-YZz" firstAttribute="trailing" secondItem="y6g-bb-KaB" secondAttribute="trailing" id="RMt-wA-v43"/>
                             <constraint firstAttribute="trailing" secondItem="XE6-js-Uun" secondAttribute="trailing" id="TNS-Co-Fsi"/>
                             <constraint firstItem="Okw-fO-8ZP" firstAttribute="leading" secondItem="Nzb-Hh-YZz" secondAttribute="leading" id="Tbo-bP-YM9"/>
-                            <constraint firstItem="xy3-8U-c59" firstAttribute="leading" secondItem="Nzb-Hh-YZz" secondAttribute="leading" constant="5" id="WxE-TI-9Mu"/>
                             <constraint firstItem="59a-NE-te1" firstAttribute="top" secondItem="Okw-fO-8ZP" secondAttribute="bottom" id="YNv-eZ-Dcy"/>
-                            <constraint firstItem="xy3-8U-c59" firstAttribute="centerY" secondItem="wUe-pO-h9z" secondAttribute="centerY" constant="5" id="ZOL-xi-FD4"/>
                             <constraint firstItem="kjH-nb-TWJ" firstAttribute="leading" secondItem="Nzb-Hh-YZz" secondAttribute="leading" constant="10" id="i8b-4Z-X9K">
                                 <variation key="heightClass=regular-widthClass=regular" constant="200"/>
                             </constraint>
@@ -379,7 +361,10 @@
                     </view>
                     <connections>
                         <outlet property="btcLabel" destination="bZr-za-MNB" id="9BA-L8-DRv"/>
+                        <outlet property="highestPrice" destination="J0S-65-akf" id="7ql-VG-uQ2"/>
+                        <outlet property="lowestPrice" destination="AAu-6A-kdR" id="PwE-pv-MNc"/>
                         <outlet property="nameLabel" destination="wUe-pO-h9z" id="wfY-x1-LlO"/>
+                        <outlet property="sparklineView" destination="y6g-bb-KaB" id="3d9-1w-Rtz"/>
                         <outlet property="usdLabel" destination="FvM-4k-VTD" id="ic4-DS-030"/>
                     </connections>
                 </viewController>
@@ -469,7 +454,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="back" width="48" height="48"/>
         <image name="coins" width="23" height="21"/>
         <image name="shadow" width="1" height="7"/>
         <image name="warning" width="365" height="365"/>
