@@ -8,22 +8,24 @@
 import UIKit
 
 class CoinDetailsViewController: UIViewController {
-
+    @IBOutlet weak var usdLabel: UILabel!
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    @IBOutlet weak var btcLabel: UILabel!
+    
+    var coin: Coin?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let coin = coin {
+            nameLabel.text = coin.name
+            usdLabel.text = "$\(coin.price)"
+            btcLabel.text = "\(coin.btcPrice) BTC"
 
-        // Do any additional setup after loading the view.
+        }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+
