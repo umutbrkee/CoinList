@@ -13,7 +13,7 @@ enum NetworkError: Error {
     case decodingError
 }
 
-class Webservice {
+class Webservice: WebserviceProtocol {
     
     func getCoins(url: URL, completion: @escaping (Result<[Coin], Error>) -> Void) {
         
@@ -37,3 +37,6 @@ class Webservice {
     
 }
 
+protocol WebserviceProtocol {
+    func getCoins(url: URL, completion: @escaping (Result<[Coin], Error>) -> Void)
+}
