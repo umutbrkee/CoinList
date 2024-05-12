@@ -17,8 +17,8 @@ class CoinsViewController: UIViewController {
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var favoritesSegmentControl: UISegmentedControl!
     @IBOutlet weak var coinsCollectionView: UICollectionView!
-    var coins = [Coin]()
-    var sortedCoins = [Coin]() // Sorted array to preserve the original data
+    
+    var viewModel: CoinsViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,60 +30,38 @@ class CoinsViewController: UIViewController {
         // Default sorting type (descending)
         sortingSegmentControl.selectedSegmentIndex = 1
         
-        // Fetching coins
-        let url = URL(string: "https://psp-merchantpanel-service-sandbox.ozanodeme.com.tr/api/v1/dummy/coins")!
-        Webservice().getCoins(url: url) { (result) in
-            switch result {
-            case .success(let coins):
-                self.coins = coins
-                print(coins[0].price)
-                self.sortedCoins = coins // Initially, sortedCoins will be the same as coins
-                DispatchQueue.main.async {
-                    self.coinsCollectionView.reloadData()
-                }
-            case .failure(let error):
-                print(error)
-            }
-        }
+        // ViewModel initialization
+        viewModel = CoinsViewModel(webservice: Webservice())
+        viewModel.delegate = self
         
-
+        // Fetching coins
+        viewModel.load()
     }
     
     @objc func sortingSegmentValueChanged(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
-            sortCoins(by: .ascending)
+            viewModel.sortCoins(by: .ascending)
         } else {
-            sortCoins(by: .descending)
+            viewModel.sortCoins(by: .descending)
         }
     }
-    
-    func sortCoins(by sortingType: SortingType) {
-        switch sortingType {
-        case .ascending:
-            sortedCoins.sort { Float($0.price)! < Float($1.price)! }
-        case .descending:
-            sortedCoins.sort { Float($0.price)! > Float($1.price)! }
-        }
-        coinsCollectionView.reloadData()
-    }
-
 }
 
 extension CoinsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return sortedCoins.count // Use sortedCoins for collection view data source
+        return viewModel.numberOfCoins
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = coinsCollectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
-        cell.configure(with: sortedCoins[indexPath.row]) // Use sortedCoins for configuring cell
+        cell.configure(with: viewModel.coin(at: indexPath.row))
         return cell
     }
 }
 
 extension CoinsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let selectedCoin = sortedCoins[indexPath.row]
+        let selectedCoin = viewModel.coin(at: indexPath.row)
         
         // Hedef view controller'ı oluşturun
         let storyboard = UIStoryboard(name: "Main", bundle: nil) // Eğer farklı bir storyboard kullanıyorsanız, ismini ona göre güncelleyin
@@ -99,3 +77,16 @@ extension CoinsViewController: UICollectionViewDelegate {
     }
 }
 
+extension CoinsViewController: CoinsViewModelDelegate {
+    func didFetchCoins() {
+        DispatchQueue.main.async {
+            self.coinsCollectionView.reloadData()
+        }
+    }
+    
+    func sortCoins() {
+        DispatchQueue.main.async {
+            self.coinsCollectionView.reloadData()
+        }
+    }
+}
