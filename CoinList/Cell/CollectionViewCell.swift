@@ -20,19 +20,37 @@ class CollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        // Arka plan rengini belirle (isteğe bağlı)
+                
+                // Kenar boşluklarını belirle (isteğe bağlı)
+                contentView.layer.cornerRadius = 8
+                contentView.layer.borderWidth = 1
+                contentView.layer.borderColor = UIColor.lightGray.cgColor
+                
+                // Hücrenin tam oturması için kenar boşluklarını belirle (isteğe bağlı)
+                contentView.clipsToBounds = true
         
     }
     
     func configure(with coin: Coin) {
         nameLabel.text = coin.name
         symbol.text = coin.symbol
-        priceLabel.text = coin.price
-        btcPriceLabel.text = coin.btcPrice
+        
+        if let priceValue = Double(coin.price) {
+            let priceFormatted = String(format: "$%.2f", priceValue)
+            priceLabel.text = priceFormatted
+        } else {
+            priceLabel.text = "$\(coin.price)"
+        }
+        
+        btcPriceLabel.text = "\(coin.btcPrice) USD"
         percentageLabel.text = coin.change
+        
         let modifiedURL = coin.iconURL.replacingLast3Characters(with: "png")
         let url = URL(string: modifiedURL)
         image.kf.setImage(with: url)
     }
+
 
 }
 extension String {
