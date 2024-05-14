@@ -17,8 +17,9 @@ https://github.com/umutbrkee/CoinList.git
 2. Open the `.xcodeproj` file in Xcode.
 3. Build and run the application on your simulator or real device 📱.
 
+
 ## Architecture - MVVM
-<img src="![image](https://github.com/umutbrkee/CoinList/assets/45608427/485c064a-92a9-4c9a-b015-f60a7fa3a40e)
+<img src="https://github.com/umutbrkee/CoinList/assets/45608427/485c064a-92a9-4c9a-b015-f60a7fa3a40e
 " alt="Screenshot 2" width="600">
 
 Model–View–ViewModel (MVVM) is a software architectural pattern that facilitates the separation of the development of the GUI (the view) from the development of the business logic or back-end logic (the model) so that the view is not dependent on any specific model platform.
