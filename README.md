@@ -1,7 +1,7 @@
 # CoinList App
 
 ## Overview
-Welcome to the CoinList App, a simple and efficient application designed to help to find every crypto coin and its details easyly 🚀. This project demonstrates a custom mobile crypto coin lister application using modern development techniques and architectural approaches in iOS development.
+Welcome to the CoinList App, a simple and efficient application designed to help to find every crypto coin and its details easily 🚀. This project demonstrates a custom mobile crypto coin lister application using modern development techniques and architectural approaches in iOS development.
 
 ## Setup
 ### Prerequisites
