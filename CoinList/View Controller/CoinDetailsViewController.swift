@@ -1,6 +1,7 @@
 import UIKit
 
 class CoinDetailsViewController: UIViewController {
+    @IBOutlet weak var dateListedLabel: UILabel!
     @IBOutlet weak var lowestPrice: UILabel!
     @IBOutlet weak var highestPrice: UILabel!
     @IBOutlet weak var usdLabel: UILabel!
@@ -14,9 +15,16 @@ class CoinDetailsViewController: UIViewController {
         super.viewDidLoad()
         
         if let coin = coin {
-            nameLabel.text = coin.name
+            nameLabel.text = "\(coin.name) Rank #\(coin.rank) "
             usdLabel.text = "$\(coin.price)"
             btcLabel.text = "\(coin.btcPrice) BTC"
+            
+            // Format date
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd/MM/yyyy"
+            let formattedDate = dateFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(coin.listedAt)))
+
+            dateListedLabel.text = "Listed at: \(formattedDate)"
             
             if let lowest = coin.sparkline.min(),
                let highest = coin.sparkline.max() {

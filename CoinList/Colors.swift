@@ -2,7 +2,7 @@
 //  Colors.swift
 //  CoinList
 //
-//  Created by Umut on 8.05.2024.
+//  Created by Umut on 10.05.2024.
 //
 
 import UIKit
@@ -18,4 +18,15 @@ struct Colors {
     static let negativeGrow = UIColor(red: 210/255, green: 80/255, blue: 78/255, alpha: 1.0)
     static let bubbleBackground = UIColor(red: 51/255, green: 55/255, blue: 68/255, alpha: 1.0)
     static let actionButtonBackground = UIColor(red: 51/255, green: 55/255, blue: 68/255, alpha: 1.0)
+}
+
+struct Formatter {
+    static func formatCost(label: UILabel, value: Double, maximumFractionDigits: Int) {
+        let formatter = NumberFormatter()
+//        formatter.numberStyle = .currency
+        formatter.maximumFractionDigits = maximumFractionDigits
+        
+        let formattedValue = formatter.string(from: NSNumber(value: value)) ?? "\(value)"
+        label.text = formattedValue
+    }
 }

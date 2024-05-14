@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  CoinList
 //
-//  Created by Umut on 8.05.2024.
+//  Created by Umut on 10.05.2024.
 //
 
 import UIKit
