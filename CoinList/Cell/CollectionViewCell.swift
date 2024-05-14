@@ -53,7 +53,7 @@ class CoinCell: UICollectionViewCell {
     public func configure(using viewModel: CoinCellViewModel) {
         coinFullName.text = viewModel.fullName
         coinName.text = "(\(viewModel.symbol))"
-        coinPriceLabel.text = "\(viewModel.price)"
+        coinPriceLabel.text = "$\(viewModel.price)"
         percentChangeLabel.text = "\(viewModel.change)%"
         percentChangeLabel.textColor = viewModel.percentColor()
         

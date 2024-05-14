@@ -54,13 +54,31 @@ final class CoinsViewModel {
     
     func sortCoins(by sortingType: SortingType) {
         switch sortingType {
+        case .byName:
+            coins.sort { $0.name < $1.name }
+        case .byPrice:
+            coins.sort { Float($0.price)! > Float($1.price)! }
+        case .byDate:
+            coins.sort { $0.listedAt.toDate() < $1.listedAt.toDate() }
+        case .byRank: // Yeni durum
+            coins.sort { $0.rank < $1.rank }
         case .ascending:
-            sortedCoins.sort { Float($0.price)! < Float($1.price)! }
+            break
         case .descending:
-            sortedCoins.sort { Float($0.price)! > Float($1.price)! }
+            break
         }
+        sortedCoins = coins
         delegate?.sortCoins()
     }
+    
+    func search(text: String) {
+            if text.isEmpty {
+                sortedCoins = coins
+            } else {
+                sortedCoins = coins.filter { $0.name.lowercased().contains(text.lowercased()) || $0.symbol.lowercased().contains(text.lowercased()) }
+            }
+            delegate?.sortCoins()
+        }
     
     func coin(at index: Int) -> Coin {
         return sortedCoins[index]
@@ -70,4 +88,10 @@ final class CoinsViewModel {
         return sortedCoins.count
     }
     
+}
+
+extension Int {
+    func toDate() -> Date {
+        return Date(timeIntervalSince1970: TimeInterval(self))
+    }
 }

@@ -60,8 +60,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q8t-uc-v2S" customClass="SegmentedControl" customModule="CoinList" customModuleProvider="target">
                                 <rect key="frame" x="5" y="108" width="383" height="35"/>
                                 <subviews>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="pNH-ae-pA7">
-                                        <rect key="frame" x="57" y="2" width="269" height="32"/>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="pNH-ae-pA7">
+                                        <rect key="frame" x="12" y="2" width="359" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="31" id="nII-Xh-btt"/>
                                         </constraints>
@@ -69,6 +69,7 @@
                                             <segment title="Name"/>
                                             <segment title="Price"/>
                                             <segment title="Date Listed"/>
+                                            <segment title="Rank"/>
                                         </segments>
                                     </segmentedControl>
                                 </subviews>
@@ -145,6 +146,7 @@
         <!--Sasas View Controller-->
         <scene sceneID="c9r-38-Eby">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jfy-XB-4RV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="88f-xl-NdC" customClass="SasasViewController" customModule="CoinList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U66-aI-dbQ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
@@ -153,7 +155,6 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Jfy-XB-4RV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="465" y="93"/>
         </scene>
@@ -287,6 +288,15 @@
                                         <color key="textColor" systemColor="systemRedColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Listed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jf1-PT-7sZ">
+                                        <rect key="frame" x="35" y="135.99999999999994" width="87" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="87" id="fwN-QT-wFH"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.72156864399999998" green="0.72156864399999998" blue="0.72156864399999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -301,8 +311,10 @@
                                     <constraint firstItem="J0S-65-akf" firstAttribute="centerY" secondItem="aK3-l8-a1J" secondAttribute="centerY" id="NhE-Pe-dBD"/>
                                     <constraint firstItem="t0X-KJ-rtQ" firstAttribute="leading" secondItem="aK3-l8-a1J" secondAttribute="leading" id="Oc3-KU-Nqb"/>
                                     <constraint firstItem="AAu-6A-kdR" firstAttribute="leading" secondItem="t0X-KJ-rtQ" secondAttribute="trailing" constant="5" id="QX8-KC-YcL"/>
+                                    <constraint firstItem="Jf1-PT-7sZ" firstAttribute="top" secondItem="59a-NE-te1" secondAttribute="top" constant="136" id="Xki-C9-Agd"/>
                                     <constraint firstItem="aK3-l8-a1J" firstAttribute="leading" secondItem="59a-NE-te1" secondAttribute="leading" constant="36" id="Y4A-Oa-0K1"/>
                                     <constraint firstItem="J0S-65-akf" firstAttribute="leading" secondItem="aK3-l8-a1J" secondAttribute="trailing" constant="5" id="aaz-Z0-5Zc"/>
+                                    <constraint firstItem="Jf1-PT-7sZ" firstAttribute="leading" secondItem="59a-NE-te1" secondAttribute="leading" constant="35" id="bgE-cx-DOX"/>
                                     <constraint firstItem="fDG-sA-hW9" firstAttribute="top" secondItem="FHH-fh-Nhi" secondAttribute="bottom" constant="5" id="e2A-YL-XBT"/>
                                     <constraint firstItem="t0X-KJ-rtQ" firstAttribute="top" secondItem="AAu-6A-kdR" secondAttribute="top" id="eql-PI-wZb"/>
                                     <constraint firstItem="FvM-4k-VTD" firstAttribute="leading" secondItem="fDG-sA-hW9" secondAttribute="trailing" constant="5" id="fHU-Mj-KlZ"/>
@@ -350,6 +362,7 @@
                     </view>
                     <connections>
                         <outlet property="btcLabel" destination="bZr-za-MNB" id="9BA-L8-DRv"/>
+                        <outlet property="dateListedLabel" destination="Jf1-PT-7sZ" id="xeK-Ws-18v"/>
                         <outlet property="highestPrice" destination="J0S-65-akf" id="7ql-VG-uQ2"/>
                         <outlet property="lowestPrice" destination="AAu-6A-kdR" id="PwE-pv-MNc"/>
                         <outlet property="nameLabel" destination="wUe-pO-h9z" id="wfY-x1-LlO"/>
