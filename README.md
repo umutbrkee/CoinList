@@ -19,8 +19,7 @@ https://github.com/umutbrkee/CoinList.git
 
 
 ## Architecture - MVVM
-<img src="https://github.com/umutbrkee/CoinList/assets/45608427/485c064a-92a9-4c9a-b015-f60a7fa3a40e
-" alt="Screenshot 2" width="600">
+![1__DMvajfGcKQoIOWpLysa1Q](https://github.com/umutbrkee/CoinList/assets/45608427/d06420ae-b501-4a77-8872-61b9a8d4368d)
 
 Model–View–ViewModel (MVVM) is a software architectural pattern that facilitates the separation of the development of the GUI (the view) from the development of the business logic or back-end logic (the model) so that the view is not dependent on any specific model platform.
 
@@ -39,18 +38,9 @@ Model–View–ViewModel (MVVM) is a software architectural pattern that facilit
 - **Kingfisher** `7.11.0`: For image downloading and caching.
 
 
+![image](https://github.com/umutbrkee/CoinList/assets/45608427/b175b80b-b0da-4d5e-b3b1-6587dc5143a7)
 
-## Design
-Follow the Figma designs provided by the Getir. 🎨.
 
-<div align="center">
-        <img src="![image](https://github.com/umutbrkee/CoinList/assets/45608427/e9bc3016-4ae7-44ec-aa43-bddb457f1232)
-" alt="Screenshot 1" width="250">
-    <img src="![image](https://github.com/umutbrkee/CoinList/assets/45608427/d29855ac-0024-4733-9c23-529d19276582)
-" alt="Screenshot 2" width="250">
-    <img src="![image](https://github.com/umutbrkee/CoinList/assets/45608427/82176c5b-4849-448d-8ab6-783fd8482004)
-" alt="Screenshot 3" width="250">
-</div>
 
 
 
