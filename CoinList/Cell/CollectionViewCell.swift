@@ -8,51 +8,63 @@
 import UIKit
 import Kingfisher
 
-class CollectionViewCell: UICollectionViewCell {
-
-    @IBOutlet weak var image: UIImageView!
-    @IBOutlet weak var percentageLabel: UILabel!
-    @IBOutlet weak var btcPriceLabel: UILabel!
-    @IBOutlet weak var priceLabel: UILabel!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var symbol: UILabel!
+class CoinCell: UICollectionViewCell {
     
+    // MARK: - IBOutlet
+    
+    @IBOutlet weak var coinImage: UIImageView!
+    @IBOutlet weak var coinFullName: UILabel!
+    @IBOutlet weak var coinName: UILabel!
+    @IBOutlet weak var coinPriceLabel: UILabel!
+    @IBOutlet weak var percentChangeLabel: UILabel!
+    
+    // MARK: - Properties
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Arka plan rengini belirle (isteğe bağlı)
-                
-                // Kenar boşluklarını belirle (isteğe bağlı)
-                contentView.layer.cornerRadius = 8
-                contentView.layer.borderWidth = 1
-                contentView.layer.borderColor = UIColor.lightGray.cgColor
-                
-                // Hücrenin tam oturması için kenar boşluklarını belirle (isteğe bağlı)
-                contentView.clipsToBounds = true
         
+        configureShape()
     }
     
-    func configure(with coin: Coin) {
-        nameLabel.text = coin.name
-        symbol.text = coin.symbol
+    public override func prepareForReuse() {
+        super.prepareForReuse()
         
-        if let priceValue = Double(coin.price) {
-            let priceFormatted = String(format: "$%.2f", priceValue)
-            priceLabel.text = priceFormatted
-        } else {
-            priceLabel.text = "$\(coin.price)"
-        }
-        
-        btcPriceLabel.text = "\(coin.btcPrice) USD"
-        percentageLabel.text = coin.change
-        
-        let modifiedURL = coin.iconURL.replacingLast3Characters(with: "png")
-        let url = URL(string: modifiedURL)
-        image.kf.setImage(with: url)
+        coinPriceLabel.text = ""
+        coinImage.image = nil
     }
-
-
+    
+    // MARK: - Configure
+    
+    private func configureShape() {
+        self.contentView.layer.cornerRadius = 12.0
+        self.contentView.layer.borderWidth = 1.0
+        self.contentView.layer.borderColor = UIColor.clear.cgColor
+        self.contentView.layer.masksToBounds = true
+        
+        self.layer.shadowColor = UIColor.lightGray.cgColor
+        self.layer.shadowOffset = CGSize(width: 0, height: 1.0)
+        self.layer.shadowRadius = 1.0
+        self.layer.shadowOpacity = 0.5
+        self.layer.masksToBounds = false
+        self.layer.cornerRadius = 12.0
+        self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.contentView.layer.cornerRadius).cgPath
+    }
+    
+    public func configure(using viewModel: CoinCellViewModel) {
+        coinFullName.text = viewModel.fullName
+        coinName.text = "(\(viewModel.symbol))"
+        coinPriceLabel.text = "\(viewModel.price)"
+        percentChangeLabel.text = "\(viewModel.change)%"
+        percentChangeLabel.textColor = viewModel.percentColor()
+        
+        let modifiedURL = viewModel.iconURL.replacingLast3Characters(with: "png")
+        let url = URL(string: modifiedURL)
+        coinImage.kf.setImage(with: url)
+    }
+    
+    
 }
+
 extension String {
     func replacingLast3Characters(with newEnding: String) -> String {
         guard self.count >= 3 else { return self }
@@ -60,5 +72,6 @@ extension String {
         let start = self[..<index]
         return start + newEnding
     }
+    
 }
 
