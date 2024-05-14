@@ -7,3 +7,4 @@
 
 import Foundation
 
+//TODO: implement CoinDetailsViewModel
