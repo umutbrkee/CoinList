@@ -13,6 +13,7 @@ enum SortingType {
     case byName
     case byPrice
     case byDate
+    case byRank
 }
 
 
@@ -30,9 +31,9 @@ class CoinsViewController: UIViewController {
         
         // Registering the cell
         coinsCollectionView.register(UINib(nibName: "CoinCell", bundle: nil), forCellWithReuseIdentifier: "CoinCell")
-
+        
         sortingSegmentControl.addTarget(self, action: #selector(sortingSegmentValueChanged(_:)), for: .valueChanged)
-            
+        
         // Default sorting type (descending)
         sortingSegmentControl.selectedSegmentIndex = 1
         
@@ -61,11 +62,13 @@ class CoinsViewController: UIViewController {
             viewModel.sortCoins(by: .byPrice)
         case 2:
             viewModel.sortCoins(by: .byDate)
+        case 3: // Yeni durum
+            viewModel.sortCoins(by: .byRank)
         default:
             break
         }
-    }}
-
+    }
+}
 extension CoinsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.numberOfCoins
